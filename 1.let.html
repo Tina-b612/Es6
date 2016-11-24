@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div {
+			margin-top: 50px;
+			width: 100px;
+			height: 100px;
+			background: #f89;
+			display: none;
+		}
+		.show {
+			display: block;
+		}
+		.active {
+			background: #f89;
+		}
+
+	</style>
+</head>
+<body>
+	<input type="button" name="" value="tab1" class="active">
+	<input type="button" name="" value="tab1" >
+	<input type="button" name="" value="tab1" >
+	<div class="show">div1</div>
+	<div>div2</div>
+	<div>div3</div>
+
+</body>
+<script type="text/javascript">
+	"use strict"
+	/*
+		let 特性 
+		1、不允许重复声明
+		2、没有预解析
+		3、块级作用域
+
+		从块的开始，到使用let声明这段称为暂存死区
+	 */
+	var tabs = document.getElementsByTagName("input");
+	var divs = document.getElementsByTagName("div");
+	for (let i = 0; i < tabs.length; i++) {
+		tabs[i].onclick = function (){
+			for (let j = 0; j < tabs.length; j++) {
+				tabs[j].className = "";
+				divs[j].className = "";
+			}
+			this.className = "active";
+			divs[i].className = "show";
+		}
+	}
+
+</script>
+</html>

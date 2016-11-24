@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict"
+		//属性简洁表示法
+		function fn(x,y){
+			x++;
+			y++;
+			return {x,y}
+		}
+		console.log(fn(1,2))
+
+
+		//方法的简洁表示法
+		var obj = {
+			name :"Tina",
+			showName (){
+				return this.name
+			}
+		}
+
+		console.log(obj.showName())
+
+
+		//允许使用表达式作为属性名
+
+		var sex = 'man';
+		var person = {
+			name : "Tina",
+			[sex]: false,
+			['get'+'name'](){
+				return this.name
+			}
+		}
+		console.log(person.man);
+		console.log(person.getname())
+
+
+	</script>
+</body>
+</html>

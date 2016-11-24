@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use stritc"
+		var s = "xixix";
+		var str = '𠮷'
+		console.log(s.length)
+
+		//操作四个字节的字符
+		//str.at();	//返回对应位置的字符
+		console.log(str.codePointAt(0));	//返回字符串对应位置字符的码点
+		console.log(String.fromCodePoint(134071));	//根据码点获取字符
+		console.log(str.repeat(2))	//复制字符串
+
+		//模板字符串
+		//反引号包围整个字符串，${}包围变量（可以使用变量，对象的属性，数组,数组的某一项，可以进行运算）
+		var name = "Tina";
+		var age = 18;
+		var object = {
+			xxi: 123,
+			haha: 456
+		}
+		var arr = [1,2,2]
+
+		var str = `名字：${name},年龄：${age},${object.xxi},${arr}`
+		console.log(str)
+
+
+		//字符串的Unicode表示码
+		console.log('\u0061')
+		console.log('\u{20BB7}')
+
+		/*
+			str.includes()
+				参数: 	1、要查找的字符串
+						2、启示位置
+						返回布尔值，表示是否找到了参数字符串
+
+			str.startsWith()
+				参数： 	1、要查找的字符串
+						2、起始位置
+						返回布尔值，表示参数是否在源字符串的头部
+
+			str.endsWith()
+				参数： 	1、要查找的字符串
+						2、起始位置
+						返回布尔值，表示参数是否在源字符串分结尾
+
+
+
+		 */
+
+	</script>
+</body>
+</html>

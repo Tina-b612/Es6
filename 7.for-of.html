@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict"
+
+		/*
+		
+			可以遍历所有拥有遍历接口的数据（arr，str）
+			对象没有遍历接口
+		 */
+
+		var arr = [1,2,3,4,5];
+		for(var value of arr){
+			console.log(value);
+		}
+
+		var str = "miao";
+		for(var value of str){
+			console.log(value)
+		}
+
+		/*数组默认的遍历接口是value,不过以下方法可以遍历key值（下标）*/
+		for(var key of arr.keys()){
+			console.log(key);
+		}
+
+		/*同时遍历数组的key，value值*/
+		for(var [key,value] of arr.entries()){
+			console.log(key,value);
+		}
+
+	</script>
+</body>
+</html>

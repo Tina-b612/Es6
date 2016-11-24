@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	function loadImageAsync(url) {
+	  return new Promise(function(resolve, reject) {
+	    var image = new Image();
+	    //？？？，看不懂
+
+	    image.onload = function() {
+	      resolve(image);
+	    };
+
+	    image.onerror = function() {
+	      reject(new Error('Could not load image at ' + url));
+	    };
+
+	    image.src = url;
+	  });
+	}
+</script>
+</html>

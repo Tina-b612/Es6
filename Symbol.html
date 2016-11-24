@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Symbol</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	/*
+		Symbol: 新增数据类型，表示独一无二的值
+		Sybbol值不能与其他类型的值进行运算，会报错。
+		可以使用toString()、String()显示的转换为字符串
+		可以转为布尔值
+		不可以转为数值
+	 */
+	let s = Symbol('foo');
+	console.log(typeof s);	//symbol
+	console.log(s);			//Symbol(foo)
+
+	var sym = Symbol('My symbol');
+
+	console.log(sym.toString());//Symbol(My symbol)
+	console.log(String(sym));	//Symbol(My symbol)
+	console.log(Boolean(sym));	//true
+
+	//作为属性名
+	var mySymbol = Symbol();
+	var a = {};
+	a.mySymbol = "Hello!";	
+	console.log(a.mySymbol);	//"Hello!"
+	console.log(a[mySymbol]);	//undefined
+	//注意，当使用Symbol值作为属性名时，不能用点运算符。用点运算符时，添加的属性名实际上是一个字符串。
+
+	let obj = {
+	  [s]: "123"
+	};
+	console.log(obj[s])
+
+
+	//属性名的遍历
+	/*
+	Symbol作为属性名，该属性不会出现在for...in、for...of循环中，也不会被Object.keys()、Object.getOwnPropertyNames()返回。但是，它也不是私有属性，有一个Object.getOwnPropertySymbols方法，可以获取指定对象的所有Symbol属性名。
+
+	Object.getOwnPropertySymbols方法返回一个数组，成员是当前对象的所有用作属性名的Symbol值。
+
+	 */
+	var object = {};
+	var x = Symbol('x');
+	var y = Symbol('y');
+
+	object[x] = 'hello';
+	object[y] = 'world';
+
+	var  objectSymbol = Object.getOwnPropertySymbols(object);
+	console.log(objectSymbol);
+	//Object.getOwnPropertySymbols： 	用来获取对象所有的Symbol属性名
+	//Object.getOwnPropertyNames：		用来获取对象所有的除了Symbol以外的属性名
+	//Reflect.ownKeys		获取对象所有类型的键名
+
+	
+	
+
+
+
+</script>
+</html>

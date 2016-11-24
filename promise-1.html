@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	/*var promise = new Promise(function(resolve,reject){
+
+
+		if(异步操作成功){
+			resolve(value);
+		}else{
+			reject(error);
+		}
+	})*/
+
+	function timeout(ms) {
+	  return new Promise((resolve, reject) => {
+	    setTimeout(resolve, ms, 'done');
+	    //返回一个promise对象，延迟时间到后，状态变为成功，传入参数为done
+	  });
+	}
+
+	timeout(10000).then((value) => {
+		//调用函数，使用then添加回调函数，延迟时间到以后
+	  	console.log(value);
+	});
+</script>
+</html>

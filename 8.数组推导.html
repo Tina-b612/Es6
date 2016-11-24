@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*es6提供的简洁写法，允许直接通过现有数组生成新数组，这被称为数组推导,字符串也可以使用*/
+		var arr = [1,2,3,4,5];
+
+		var arr2 = [for(value of arr) value*2];	
+		console.log(arr2)
+
+		var arr3 = [for(i of arr) if(i>2) i];
+		console.log(arr3)
+
+		var arr4 = [for(i of arr) if(i>2) if(i>4) i];
+		console.log(arr4)
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var promise = new Promise(function(resolve, reject) {
+	  console.log('Promise');
+	  resolve();
+	});
+	//promise对象创建后立即执行
+	
+	promise.then(function() {
+	  console.log('Resolved.');
+	});
+	//then指定的回调函数，在当前脚本所有同步任务执行完后执行
+
+	console.log('Hi!');
+	//同步任务按文档流执行
+</script>
+</html>

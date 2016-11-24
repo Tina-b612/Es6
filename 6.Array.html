@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script type="text/javascript">
+		"use strict"
+		var divs = document.getElementsByTagName("div");
+		var eles = [].slice.call(divs);
+		console.log(eles);
+
+		var eles2 = Array.from(divs);	//类数组转数组
+		console.log(eles2);
+
+		var arr = Array.from("xixihaha");	//字符串转数组
+		console.log(arr)
+
+
+		var arr2 = Array.of(1,2,3,4,5);		//一组参数转换为数组
+		console.log(arr2);
+
+		/*
+			arr.find()
+			找出第一个符合条件的数组元素
+			参数：
+				1、回调函数
+				2、回调函数内部this的指向
+			遍历整个数组，遍历过程中调用回调函数，如果回调函数的返回值为true，则返回当前正在遍历的元素，如果所有元素都不符合条件则返回undefined
+
+		 */
+		
+
+		 var  arr3 = [1,2,3,4,5]
+
+		 var n = arr3.find(function (val,index){
+		 	console.log(arguments)
+		 	/*
+		 	0 当前值
+		 	1 索引值
+		 	2 源数组
+		 	 */
+		 	return val > 4;
+		 });
+
+		 console.log(n)
+
+		 /*
+		 arr.findIndex()
+			找出第一个符合条件的数组元素的位置
+			参数：
+				1、回调函数
+				2、回调函数内部this的指向
+			遍历整个数组，遍历过程中调用回调函数，如果回调函数的返回值为true，则返回当前正在遍历的元素的index，如果所有元素都不符合条件则返回-1；
+		  */
+		 
+		 var  arr4 = [1,8,3,4,5]
+
+		 var m = arr4.findIndex(function (val,index){
+		 	return val > 10;
+		 });
+
+		 console.log(m)
+
+
+
+		 /*
+		 	arr.fill()
+		 	参数：
+		 		1、填充的参数
+		 		2、开始的位置（包括）
+		 		3、结束的位置（不包括）
+			
+
+		  */
+		 
+		 var  arr5 = [1,2,3,4,5]
+
+		 arr5.fill(6,2)
+
+		 console.log(arr5)
+	</script>
+</body>
+</html>

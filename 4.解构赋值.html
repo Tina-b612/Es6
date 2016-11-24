@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		"use stritc"
+		/*
+		解构赋值： 
+			允许按照一定的模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）
+		按照对应是结构，解析结构
+		 */
+		var arr = [1,2,3];
+		var [a,b,c] = arr;
+		console.log(a,b,c)
+		//数组解构赋值按照顺序
+
+		var obj = {
+			foo: function(){
+
+			},
+			o:{},
+			arr:[],
+			str:"abc"
+		}
+
+		var {foo,arr,str,o} = obj;
+		console.log(foo,arr,str,o);
+		//对象结构赋值按变量名对应属性名，无序
+		
+
+		var y = 1;
+		var x = 2;
+		var [x,y] = [y,x];
+		console.log(x,y)
+		//变量之间交换值
+	</script>
+</body>
+
+</html>
