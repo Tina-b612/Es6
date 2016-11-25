@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use stritc"
+
+		/*
+		Set(array||string)
+			类似数组的数据结构，但是成员的值都是唯一的，没有重复的值。
+			是一个构造函数，使用new实例化
+
+			set.size 	set实例的长度
+			set.add		添加值
+			set.delet(val)	删除值
+			set.has(val) 	判断参数是否为set成员
+			set.clear()		清除set中所有的成员
+
+		 */
+
+		var set = new Set([1,1,2,5,1,6,5]);
+		console.log(set);
+
+		console.log(set.size);
+		var arr = [6,8,9,8,5]
+		//set.add(...arr);	//无效
+		set.add(55,9,10,80)	//只能识别第一个
+		console.log(set);
+
+		set.delete(55,9,10,80)	//只能识别第一个
+		console.log(set);
+
+		console.log(set.has(80));
+
+		set.clear();
+		console.log(set);
+
+		
+
+
+	</script>
+</body>
+</html>

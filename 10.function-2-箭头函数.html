@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		 箭头函数：作为回调函数使用
+		 this 指向，绑定定义时所指向的对象，而不是使用时指向的对象
+		 不可以当做构造函数，不可以使用new命令，否则会报错
+		 函数内不存在argument.
+
+		*/
+		var arr = [1,8,59,55,62,79,512];
+		arr.sort((a,b)=>a-b);
+		console.log(arr);
+
+		var fn = (a,b) => a+b;
+		console.log(fn(1,5));
+
+
+
+
+
+	</script>
+</body>
+</html>

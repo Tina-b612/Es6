@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		class Cat {
+			//构造函数
+			constructor(name){
+				this.name = name;
+			}
+			//方法
+			getName(){
+				return this.name;
+			}
+		}
+
+		/*
+		
+		在constructor方法内，super指代父类的constructor方法，在其他方法内，super指代父类的同名方法；
+		 */
+
+		//继承类
+		class Mei extends Cat {
+			//构造函数
+			constructor(name,color){
+				//super指向父类构造函数
+				super(name);
+				this.color = color;
+			}
+			showColor (){
+				console.log(this.color);
+			}
+		}
+
+		var cat = new Cat("miao");
+		console.log(cat.getName());
+
+
+		var mei = new Mei("mei","#ccc");
+		mei.showColor();
+
+	</script>
+</body>
+</html>

@@ -6,7 +6,29 @@
 </head>
 <body>
 	<script type="text/javascript">
+		/*
+			rest : 获取函数多余的参数,后面不能再跟其他的形参
+
+			... : 扩展运算符，把数组类数组转化为单独的每一个
+		 */k
 		
+		 function fn(a,b,c,...rest){
+		 	console.log(rest);
+		 }
+		 fn(1,2,3,4,5,6)
+
+
+		var arr = [1,2,3,4,5,6,10];
+
+		console.log(Math.max.apply(null,arr));
+
+		console.log(Math.max(...arr));
+
+		var str = "xixijaja";
+		var arr2 = [...str];
+		console.log(arr2)
+
+
 	</script>
 </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict"
+		/*
+		数组套键值对的形式
+		重名后后面覆盖前面的
+		可以使用obj作为键
+
+		map.size	成员数量
+		map.set		添加成员
+		map.get 	访问成员
+		map.has		查找成员
+		map.delete	删除成员
+		map.clear	清楚成员
+
+		 */
+		var map = new Map([['name','leo'],['age','18']]);
+		console.log(map.size);
+		var arr = [...map];
+		console.log(arr);
+
+		/*var set = new Set([5,9,6,8,4,7,4,4,4]);
+		console.log(set)
+		var arr2 = [...set];  
+		conosle.log(arr2);*/
+
+	</script>
+</body>
+</html>

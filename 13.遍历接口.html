@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict"
+		var  obj = {
+			a:1,
+			b:2,
+			c:3
+		}
+
+
+		//部署遍历接口
+		Object.prototype[Symbol.iterator] = function (){
+			var keys = Object.keys(this); //获取到实例上所有的key
+			var index = 0;
+			var _self = this;
+
+			return {
+				//遍历时调用的方法
+				next(){
+					if(index < keys.length) {
+						return {value:_self[keys[index++]],done:false};
+					}else {
+						return {value:undefined,done:true};
+					}
+					//done 代表遍历是否结束，false表示未结束，true表示已结束
+				}
+			}
+		}
+
+		for(var val of obj){
+			console.log(val);
+		}
+
+	</script>
+</body>
+</html>
